@@ -1,15 +1,17 @@
 <template>
   <div>
-    <NuxtLogo/>
     <h1>main page</h1>
+    <div>
+      <ProductListPage></ProductListPage>
+    </div>
   </div>
 </template>
 
 <script>
-import NuxtLogo from "@/components/NuxtLogo";
+import ProductListPage from '~/components/ProductList'
 export default {
   name: 'MainPage',
-  components: { NuxtLogo },
+  components: { ProductListPage },
 }
 </script>
 
