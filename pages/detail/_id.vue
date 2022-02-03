@@ -20,7 +20,7 @@
 <script>
 
 // import axios from 'axios';
-import fetchProductById from '@/api'
+import { fetchProductById } from '@/api/index'
 
 export default {
   name: 'IdPage',
@@ -28,6 +28,10 @@ export default {
     const response = await fetchProductById(params.id)
     const product = response.data
     return { product }
+  },
+  methods: {
+    addToCart() {
+    },
   },
 }
 </script>
