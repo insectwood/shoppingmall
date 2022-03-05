@@ -20,7 +20,7 @@
 <script>
 
 // import axios from 'axios';
-import { fetchProductById } from '@/api/index'
+import { fetchProductById, createCartItem } from '@/api/index'
 
 export default {
   name: 'IdPage',
@@ -30,7 +30,11 @@ export default {
     return { product }
   },
   methods: {
-    addToCart() {
+    async addToCart() {
+      const response = await createCartItem(this.products)
+      console.log(response)
+      this.$store.commit('addCartItem', this.product)
+      await this.$router.push('/cart')
     },
   },
 }

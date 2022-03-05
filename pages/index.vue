@@ -18,6 +18,9 @@
           <span>{{ product.price }}</span>
         </li>
       </ul>
+      <div class='cart-wrapper'>
+        <button class='btn' @click='moveToCartPage'>Cart</button>
+      </div>
     </main>
   </div>
 </template>
@@ -53,11 +56,13 @@ export default {
     },
     async searchProducts() {
       const response = await fetchProductsByKeyword(this.searchKeyword)
-      console.log(response)
       this.products = response.data.map((item) => ({
         ...item,
         imageUrl: `${item.imageUrl}?random=${Math.random()}`,
       }))
+    },
+    moveToCartPage() {
+      this.$router.push(`/cart`);
     }
   }
 }
