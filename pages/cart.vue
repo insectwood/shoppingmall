@@ -20,13 +20,13 @@
 
 <script>
 
-import {FETCH_CART_ITEMS} from '@/store'
+// import {FETCH_CART_ITEMS} from '@/store'
 
 export default {
   name: 'cartPage',
-  async asyncData({store}) {
-    await store.dispatch(FETCH_CART_ITEMS)
-  },
+  // async asyncData({store}) {
+  //   await store.dispatch(FETCH_CART_ITEMS)
+  // },
 }
 </script>
 
